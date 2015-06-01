@@ -4,6 +4,10 @@
  */
 var ScrollToTopBehavior = {
 
+  getScrollPosition: function() {
+    return {x: 0, y: 0};
+  },
+
   updateScrollPosition: function () {
     window.scrollTo(0, 0);
   }

@@ -1,10 +1,13 @@
 var LocationActions = require('../actions/LocationActions');
+var getWindowScrollPosition = require('../getWindowScrollPosition');
 
 /**
  * A scroll behavior that attempts to imitate the default behavior
  * of modern browsers.
  */
 var ImitateBrowserBehavior = {
+
+  getScrollPosition: getWindowScrollPosition,
 
   updateScrollPosition: function (position, actionType) {
     switch (actionType) {

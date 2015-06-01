@@ -37,7 +37,7 @@ var ScrollHistory = {
       if (!this.scrollHistory)
         this.scrollHistory = {};
 
-      this.scrollHistory[path] = getWindowScrollPosition();
+      this.scrollHistory[path] = this.getScrollBehavior().getScrollPosition();
     },
 
     /**
