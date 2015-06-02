@@ -34,10 +34,14 @@ var ScrollHistory = {
      * Records curent scroll position as the last known position for the given URL path.
      */
     recordScrollPosition: function (path) {
+      var scrollBehavior = this.getScrollBehavior();
+
       if (!this.scrollHistory)
         this.scrollHistory = {};
 
-      this.scrollHistory[path] = this.getScrollBehavior().getScrollPosition();
+      if (scrollBehavior != null && typeof(scrollBehavior.getScrollPosition) == 'function') {
+        this.scrollHistory[path] = scrollBehavior.getScrollPosition();
+      }
     },
 
     /**
